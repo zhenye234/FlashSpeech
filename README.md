@@ -48,7 +48,7 @@ Implementation of the [FlashSpeech](https://arxiv.org/abs/2404.14700). For all d
   - In `models/tts/naturalspeech2/flashspeech_trainer_stage2.py`, set the initial weights obtained from Stage 1 training.
   
 - **Stage 3 Development**:
-  - The code for Stage 3 is not yet written. However, you can refer to Stage 1's consistency training to implement it.
+  - The code for Stage 3 is not yet released. However, you can refer to Stage 1's consistency training to implement it.
 
 ## TODO
 Further organize the project structure and complete the remaining code.
@@ -57,10 +57,7 @@ Further organize the project structure and complete the remaining code.
 
 Special thanks to **Amphion**, as our codebase is primarily borrowed from Amphion.
 
----
-
-If you have any questions or suggestions, feel free to submit [issues](https://github.com/your-repository-link/issues) or contact the maintainers.
-
+ 
 
 
 Thank you for using FlashSpeech!
