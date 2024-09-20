@@ -25,7 +25,7 @@ Implementation of the [FlashSpeech](https://arxiv.org/abs/2404.14700). For all d
 - This version has been tested on the **LibriTTS** dataset. Ensure you have the following data prepared in advance:
   - Pitch
   - Code
-  - Phone
+  - Phoneme
   - Duration
 
 ## Training
@@ -36,7 +36,7 @@ Implementation of the [FlashSpeech](https://arxiv.org/abs/2404.14700). For all d
    ```
 2. **Choose Configuration**:
    - You can select either `***_s1` or `***_s2` configuration files based on training stage.
-3. **Modify Model Code**:
+3. **Modify Model Codec**:
    - In `models/tts/naturalspeech2/flashspeech.py`, update the codec to your own.
    - Adjust `self.latent_norm` to normalize the codec latent to the standard deviation (This step is crucial for training the consistency model).
 4. **Stage 2 Setup**:
