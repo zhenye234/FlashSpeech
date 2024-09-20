@@ -1,0 +1,44 @@
+{
+    "base_config": "egs/tts/NaturalSpeech2/exp_config_base.json",
+    "dataset": [
+      "libritts"
+    ],
+    "dataset_path": {
+      "libritts": "/aifs4su/data/zheny/Flashspeech/LibriTTS/LibriTTS"
+    },    
+    "preprocess": {
+      // Specify the output root path to save the processed data 
+      "extract_phone": true,
+      "phone_extractor": "espeak", // "espeak, pypinyin, pypinyin_initials_finals, lexicon (only for language=en-us right now)"      "use_phone": true,
+      "processed_dir": "data",
+      "train_file": "train.json",
+      "valid_file": "test.json",
+      "read_metadata": false,
+      "metadata_dir": "metadata"
+    },
+    // Specify the output root path to save model ckpts and logs
+    "log_dir": "ckpts/tts",
+    "train": {
+        // New trainer and Accelerator
+        "gradient_accumulation_step": 1,
+        "tracker": ["tensorboard"],
+        "max_epoch": 5000,
+        "save_checkpoint_stride": [1],
+        "keep_last": [1000],
+        "run_eval": [false],
+        "dataloader": {
+          "num_worker": 16,
+          "pin_memory": true
+        },
+        "adam": {
+            "lr":1.0e-4        //1.0e-4 8.0e-5 
+        },
+        "use_dynamic_batchsize": true,
+        "batch_size": 1000,
+        "max_tokens": 12000,
+        "max_sentences": 1000,
+        "lr_warmup_steps": 10000,
+        "lr_scheduler": "cosine",
+        "num_train_steps": 800000
+    }
+  }

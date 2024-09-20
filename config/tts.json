@@ -1,0 +1,25 @@
+{
+  "base_config": "config/base.json",  
+  "supported_model_type": [
+    "Fastspeech2",
+    "VITS",
+    "VALLE",
+    "NaturalSpeech2"
+  ],
+  "task_type": "tts",
+  "preprocess": {
+    "language": "en-us", //  espeak supports 100 languages https://github.com/espeak-ng/espeak-ng/blob/master/docs/languages.md
+    // linguistic features
+    "extract_phone": true,
+    "phone_extractor": "espeak", // "espeak, pypinyin, pypinyin_initials_finals, lexicon (only for language=en-us right now)"
+    "lexicon_path": "./text/lexicon/librispeech-lexicon.txt",
+    // Directory names of processed data or extracted features
+    "phone_dir": "phones",
+    "use_phone": true,
+    "add_blank": true
+  },
+  "model": {
+      "text_token_num": 512,
+  }
+
+}
